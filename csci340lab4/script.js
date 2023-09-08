@@ -2,13 +2,13 @@ $(document).ready(function() {
     $('#clicker').click(function() {
       $.ajax({
         dataType: "json",
-        url: "https://randomfox.ca/floof/",
+        url: "https://random.dog/woof.json",
         success: function(results) {
-          console.log(results["image"]);
-          if (results["image"].endsWith(".mp4")) {
+          console.log(results["url"]);
+          if (results["url"].endsWith(".mp4")) {
             $('#dog').attr("src", "images/blank.png");
           } else {
-            $('#dog').attr("src", results["image"]);
+            $('#dog').attr("src", results["url"]);
           }
         },
         error: function(xhr,status,error) {
