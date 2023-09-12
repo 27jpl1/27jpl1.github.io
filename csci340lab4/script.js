@@ -4,6 +4,8 @@ $(document).ready(function() {
     $('#random-clicker').click(function() {
       if(num_foxes == num_advice){
         num_foxes += 1;
+        $("#advice").text("Click the button for advice from the fox.")
+        $("#error-message").text("")
         $.ajax({
           dataType: "json",
           url: "https://randomfox.ca/floof/",
@@ -31,6 +33,7 @@ $(document).ready(function() {
       }
       else{
         num_advice += 1;
+        $("#error-message").text("")
         $.ajax({
           dataType: "json",
           url: "https://www.boredapi.com/api/activity",
